@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/10 14:25:48 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/05 15:17:35 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:06:42 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,19 +105,98 @@ int main()
 	
 	loadingScreen();
 
-	
-	/* printf("\n\n\n                        \"%%c\"      \n\n\n");
+	int res1, res2;
+
+	printf("\n\n\n");
+	printf("\033[0;37m");
+	printf("\t\t╔══════════════════════════════════════════════╗\n");
+	printf("\t\t║                                              ║\n");
+	printf("\t\t║                  testing %%c                  ║\n");
+	printf("\t\t║                                              ║\n");
+	printf("\t\t╚══════════════════════════════════════════════╝\n");
+	printf("\033[0;37m");
+	printf("\n\n\n");
 
 	char a = 'b';
+	printf("Test 1:\n\n");
+	res1 = printf("%c\n", a);
+	res2 = ft_printf("%c\n", a);
+	printf("\n");
+	printf("Result: %s\n\n", res1 == res2  ? "🆒" : "🤡");
+	usleep(300000);
+
 	char b = '\x7';
+	printf("Test 2:\n\n");
+	res1 = printf("%c\n", b);
+	res2 = ft_printf("%c\n", b);
+	printf("\n");
+	printf("Result: %s\n\n", res1 == res2  ? "🆒" : "🤡");
+	usleep(300000);
+
 	char c = ' ';
-	char d = '\t';  // 9
-	char e = 9; 	// \t
+	printf("Test 3:\n\n");
+	res1 = printf("%c\n", c);
+	res2 = ft_printf("%c\n", c);
+	printf("\n");
+	printf("Result: %s\n\n", res1 == res2  ? "🆒" : "🤡");
+	usleep(300000);
+
+	char d = '\t';
+	printf("Test 4:\n\n");
+	res1 = printf("%c\n", d);
+	res2 = ft_printf("%c\n", d);
+	printf("\n");
+	printf("Result: %s\n\n", res1 == res2  ? "🆒" : "🤡");
+	usleep(300000);
+ // 9
+	char e = 9;
+	printf("Test 5:\n\n");
+	res1 = printf("%c\n", e);
+	res2 = ft_printf("%c\n", e);
+	printf("\n");
+	printf("Result: %s\n\n", res1 == res2  ? "🆒" : "🤡");
+	usleep(300000);
+ 	// \t
 	char f = 150;
+	printf("Test 6:\n\n");
+	res1 = printf("%c\n", f);
+	res2 = ft_printf("%c\n", f);
+	printf("\n");
+	printf("Result: %s\n\n", res1 == res2  ? "🆒" : "🤡");
+	usleep(300000);
+
 	char g = '=';
-	char h = '9';
+	printf("Test 7:\n\n");
+	res1 = printf("%c\n", g);
+	res2 = ft_printf("%c\n", g);
+	printf("\n");
+	printf("Result: %s\n\n", res1 == res2  ? "🆒" : "🤡");
+	usleep(300000);
+
+	char h = '\0';
+	printf("Test 8:\n\n");
+	res1 = printf("%c\n", h);
+	res2 = ft_printf("%c\n", h);
+	printf("\n");
+	printf("Result: %s\n\n", res1 == res2  ? "🆒" : "🤡");
+	usleep(300000);
+
 	char i = 'M';
-	char j = '"'; */
+	printf("Test 9:\n\n");
+	res1 = printf("%c\n", i);
+	res2 = ft_printf("%c\n", i);
+	printf("\n");
+	printf("Result: %s\n\n", res1 == res2  ? "🆒" : "🤡");
+	usleep(300000);
+
+	char j = '"';
+	printf("Test 10:\n\n");
+	res1 = printf("%c\n", j);
+	res2 = ft_printf("%c\n", j);
+	printf("\n");
+	printf("Result: %s\n\n", res1 == res2  ? "🆒" : "🤡");
+
+	loadingScreen();
 
 	printf("\n\n\n");
 	
@@ -128,8 +207,6 @@ int main()
 	printf("\t\t╚══════════════════════════════════════════════╝\n");
 
 	printf("\n\n\n");
-	
-	int res1, res2;
 	
 	char *str1 = "ou7%%256";
 	printf("Test 1:\n\n");
