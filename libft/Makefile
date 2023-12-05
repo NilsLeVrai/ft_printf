@@ -37,6 +37,7 @@ FILES_PT1 = ft_atoi.c \
 FILES_PT2 = ft_itoa.c \
 			ft_putchar_fd.c \
 			ft_putendl_fd.c \
+			ft_putnbr_base.c \
 			ft_putnbr_fd.c \
 			ft_putstr_fd.c \
 			ft_striteri.c \
@@ -61,7 +62,7 @@ CFLAGS = -Wall -Werror -Wextra
 CC = gcc
 ARFLAGS = rcs
 
-OBJ = $(FILES_PT1:.c=.o) $(FILES_PT2:.c=.o) 
+OBJ = $(FILES_PT1:.c=.o) $(FILES_PT2:.c=.o)
 OBJ_BONUS = $(FILES_PT3:.c=.o)
 all: $(NAME)
 
@@ -70,13 +71,13 @@ $(NAME): $(OBJ)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-	
+
 clean:
 	rm -f *.o
-	
+
 fclean: clean
 	rm -f $(NAME)
-	
+
 re: fclean all
 
 bonus: $(OBJ_BONUS)

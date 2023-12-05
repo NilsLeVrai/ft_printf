@@ -12,7 +12,10 @@
 
 #include "libftprintf.h"
 
-int	args_char(int c)
+int	args_char(va_list args)
 {
-	return (write(1, &c, 1));
+	char	c;
+
+	c = va_args(args, int);
+	return (ft_putchar_fd(c, 1));
 }

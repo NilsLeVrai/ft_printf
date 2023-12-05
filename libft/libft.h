@@ -92,14 +92,14 @@ void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 
-/* 
+/*
 ·······························
 : ____                        :
 :| __ )  ___  _ __  _   _ ___ :
 :|  _ \ / _ \| '_ \| | | / __|:
 :| |_) | (_) | | | | |_| \__ \:
 :|____/ \___/|_| |_|\__,_|___/:
-······························· 
+·······························
 */
 
 typedef struct s_list
@@ -111,6 +111,7 @@ typedef struct s_list
 // int
 
 int		ft_lstsize(t_list *lst);
+int		ft_putnbr_base(unsigned long nbr, const char *base);
 
 // t_list
 

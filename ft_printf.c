@@ -17,21 +17,23 @@ int	check_args(const char *format, va_list args)
 	int	i;
 
 	i = 0;
-	/* if (*format == '%')
-		i += args_char((unsigned char)va_arg(args, unsigned int)); */
-	if (*format == 'c')
-		return (args_char((unsigned char)va_arg(args, unsigned int)));
-	/*if (*format == 'd' || *format == 'i' || *format == 'u')
-		i += args_digit((int)va_arg(args, int), (format == 'u'));*/
-	/*if (*format == 'p')
-		i += args_pointer((void*)va_arg(args, void*));  */
-	if (*format == 's')
-		return (args_string((char*)va_arg(args, char*)));
-	/* if (*format == 'x' || *format == 'X')
-		i += args_hexa(((unsigned int)va_arg(args, int))); */
-	else
-		i = -1; // -= 1; a tester
-	return (i);
+	if (*format == '%')
+		return (args_percent());
+	else if (*format == 'c')
+		return (args_char(args));
+	else if (*format == 'd' || *format == 'i')
+		i += args_digit(args);
+	else if (*format == 'p')
+		return (args_pointer(args));
+	else if (*format == 's')
+		return (args_string(args));
+	else if (*format == 'u')
+		return (args_unsigned(args));
+	else if (*format == 'x')
+		return (args_lowerhexa(args));
+	else  (*format == 'X')
+		return (args_upperhexa(args));
+	return (-1);
 }
 
 int ft_printf(const char *format, ...)
@@ -40,6 +42,8 @@ int ft_printf(const char *format, ...)
 	unsigned int	num_args;
 
 	num_args = 0;
+	if (!format)
+		return (-1);
 	va_start(args, format);
 	while (*format)
 	{
@@ -49,7 +53,6 @@ int ft_printf(const char *format, ...)
 			num_args += write(1, format, 1);
 		++format;
 	}
-	va_start(args, format);
 	va_end(args);
 	return (num_args);
 }

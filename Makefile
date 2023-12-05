@@ -11,7 +11,13 @@
 # **************************************************************************** #
 
 FILES = args_char.c \
+		args_digit.c \
+		args_lowerhexa.c \
+		args_percent.c \
+		args_pointer.c \
 		args_string.c \
+		args_unsigned.c \
+		args_upperhexa.c \
 		ft_printf.c \
 
 NAME = libftprintf.a
@@ -34,15 +40,15 @@ $(NAME): $(OBJ) | $(LIBFT)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
-	
+
 clean:
 	rm -f $(OBJ)
 	$(LIBFT_MAKEFILE) clean
-	
+
 fclean: clean all
 	rm -f $(NAME) $(OBJ)
 	$(LIBFT_MAKEFILE) fclean
-	
+
 re: fclean all
 	$(LIBFT_MAKEFILE) re
 

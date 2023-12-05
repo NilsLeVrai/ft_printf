@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   args_string.c                                      :+:      :+:    :+:   */
+/*   args_digit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
+/*   By: niabraha <niabraha@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 16:48:53 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/05 16:51:34 by niabraha         ###   ########.fr       */
+/*   Created: 2023/12/06 00:21:55 by niabraha          #+#    #+#             */
+/*   Updated: 2023/12/06 00:21:55 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int args_string(va_list args)
+int args_digit(va_list args)
 {
-	char 	*str;
-	int		len;
+	long	nbr;
+	int		is_neg;
 
-	str = va_arg(args, char*);
-	len = 0;
-	if (!str)
-		return (write(1, "(null)", 1));
-	while(str[len])
-		write(1, &str[len++], 1);
-	return (len);
+	nbr = va_arg(args, int);
+	is_neg = 0;
+	if (nbr < 0)
+	{
+		nbr *= -1;
+		is_neg++;
+		ft_putchar_fd('-', 1);
+	}
+	return (ft_putnbr_base(nbr, "0123456789") + is_neg);
 }

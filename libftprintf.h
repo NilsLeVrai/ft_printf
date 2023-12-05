@@ -20,7 +20,13 @@
 # include "./libft/libft.h"
 
 int ft_printf(const char* format, ...);
-int	args_char(int c);
-int	args_string(const char *str);
+int args_percent(va_list args);
+int args_char(va_list args);
+int args_digit(va_list args);
+int args_lowerhexa(va_list args);
+int args_pointer(va_list args);
+int args_string(va_list args);
+int args_unsigned(va_list args);
+int args_upperhexa(va_list args);
 
 #endif

@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   args_string.c                                      :+:      :+:    :+:   */
+/*   args_pointer.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
+/*   By: niabraha <niabraha@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 16:48:53 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/05 16:51:34 by niabraha         ###   ########.fr       */
+/*   Created: 2023/12/05 23:30:02 by niabraha          #+#    #+#             */
+/*   Updated: 2023/12/05 23:30:02 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int args_string(va_list args)
+int	args_pointer(va_list args)
 {
-	char 	*str;
-	int		len;
+	void	*adr;
 
-	str = va_arg(args, char*);
-	len = 0;
-	if (!str)
-		return (write(1, "(null)", 1));
-	while(str[len])
-		write(1, &str[len++], 1);
-	return (len);
+	adr = va_arg(args, void*);
+	ft_putstr_fd("0x", 1);
+	return (ft_putnbr_base((unsigned long)adr, "0123456789abcdef") + 2);
 }

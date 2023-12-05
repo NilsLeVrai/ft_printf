@@ -1,27 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   args_string.c                                      :+:      :+:    :+:   */
+/*   args_percent.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
+/*   By: niabraha <niabraha@students.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/05 16:48:53 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/05 16:51:34 by niabraha         ###   ########.fr       */
+/*   Created: 2023/12/05 23:21:28 by niabraha          #+#    #+#             */
+/*   Updated: 2023/12/05 23:21:28 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int args_string(va_list args)
+int	args_percent(void)
 {
-	char 	*str;
-	int		len;
-
-	str = va_arg(args, char*);
-	len = 0;
-	if (!str)
-		return (write(1, "(null)", 1));
-	while(str[len])
-		write(1, &str[len++], 1);
-	return (len);
+	ft_putchar_fd('%', 1);
+	return (1);
 }
