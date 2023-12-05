@@ -21,6 +21,6 @@
 
 int ft_printf(const char* format, ...);
 int	args_char(int c);
-int	args_string(char *str);
+int	args_string(const char *str);
 
 #endif

@@ -6,13 +6,13 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 17:12:56 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/05 15:56:16 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/05 16:48:32 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	args_char(char c)
+int	args_char(int c)
 {
-	write(1, &c, 1);
+	return (write(1, &c, 1));
 }
