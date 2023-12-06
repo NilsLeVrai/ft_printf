@@ -5,33 +5,22 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 15:13:05 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/06 15:23:40 by niabraha         ###   ########.fr       */
+/*   Created: 2023/12/06 17:24:42 by niabraha          #+#    #+#             */
+/*   Updated: 2023/12/06 18:22:32 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-
-void    ft_putchar(char c)
+int	ft_putnbr(int nbr, const char *base)
 {
-    write(1, &c, 1);
-}
+	int		base_len;
+	int		nb_len;
 
-void ft_putnbr(int nb)
-{
-    if (nb == -2147483648)
-        write(1, "-2147483648", 11);
-    if (nb < 0 && nb != -2147483648)
-    {
-        ft_putchar('-');
-        nb *= -1;
-    }
-    if (nb >= 10)
-    {
-        ft_putnbr(nb / 10);
-        ft_putnbr(nb % 10);
-    }
-    if (nb >= 0 && nb < 10)
-        ft_putchar(nb + '0');
+	nb_len = 0;
+	base_len = ft_strlen(base);
+	if (nbr >= base_len)
+		nb_len += ft_putnbr(nbr / base_len, base);
+	nb_len += ft_putchar_fd(base[nbr % base_len], 1);
+	return (nb_len);
 }

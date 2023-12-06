@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 10:54:04 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/06 15:23:58 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/06 17:52:04 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ typedef struct s_list
 
 int		ft_lstsize(t_list *lst);
 int		ft_putnbr_base(unsigned long nbr, const char *base);
-void	ft_putnbr(long nbr);
+int		ft_putnbr(int nbr, const char *base);
 
 // t_list
 
