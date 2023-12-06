@@ -6,7 +6,7 @@
 #    By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/17 10:47:50 by niabraha          #+#    #+#              #
-#    Updated: 2023/12/06 12:14:30 by niabraha         ###   ########.fr        #
+#    Updated: 2023/12/06 13:02:24 by niabraha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ NAME = libftprintf.a
 LIBFT_MAKEFILE = $(MAKE) -C ./libft
 LIBFT = ./libft/libft.a
 CFLAGS = -Wall -Werror -Wextra
-CC = cc
+CC = gcc
 ARFLAGS = rcs
 
 OBJ = $(FILES:.c=.o)

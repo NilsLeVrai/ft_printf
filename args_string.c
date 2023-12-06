@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:48:53 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/06 12:37:03 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/06 12:39:11 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	args_string(va_list args)
 	str = va_arg(args, char *);
 	len = 0;
 	if (!str)
-		return (write(1, "(null)", 1));
+		return (write(1, "(null)", 6));
 	while (str[len])
 		write(1, &str[len++], 1);
 	return (len);

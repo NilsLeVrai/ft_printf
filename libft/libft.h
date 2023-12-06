@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 10:54:04 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/06 12:24:51 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/06 12:50:27 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 //void
 
-void	ft_putchar_fd(char c, int fd);
+int	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);

@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 00:21:55 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/06 12:36:54 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/06 12:40:03 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	args_digit(va_list args)
 	{
 		nbr *= -1;
 		is_neg++;
-		ft_putchar_fd('-', 1);
+		write(1, "-", 1);
 	}
 	return (ft_putnbr_base(nbr, "0123456789") + is_neg);
 }
