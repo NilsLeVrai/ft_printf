@@ -6,13 +6,13 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 23:36:47 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/06 14:31:28 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/06 14:48:21 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_putnbr_base(long nbr, const char *base)
+int	ft_putnbr_base(unsigned long nbr, const char *base)
 {
 	unsigned long	base_len;
 	int				nb_len;

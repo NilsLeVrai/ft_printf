@@ -6,7 +6,7 @@
 #    By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/17 10:47:50 by niabraha          #+#    #+#              #
-#    Updated: 2023/12/06 13:02:18 by niabraha         ###   ########.fr        #
+#    Updated: 2023/12/06 15:12:43 by niabraha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -37,6 +37,7 @@ FILES_PT1 = ft_atoi.c \
 FILES_PT2 = ft_itoa.c \
 			ft_putchar_fd.c \
 			ft_putendl_fd.c \
+			ft_putnbr.c \
 			ft_putnbr_base.c \
 			ft_putnbr_fd.c \
 			ft_putstr_fd.c \

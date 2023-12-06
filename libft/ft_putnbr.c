@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   args_digit.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 00:21:55 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/06 15:17:41 by niabraha         ###   ########.fr       */
+/*   Created: 2023/12/06 15:13:05 by niabraha          #+#    #+#             */
+/*   Updated: 2023/12/06 15:23:40 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	args_digit(va_list args)
+
+void    ft_putchar(char c)
 {
-	long	nbr;
-	int		is_neg;
+    write(1, &c, 1);
+}
 
-	nbr = va_arg(args, int);
-	is_neg = 0;
-	if (nbr < 0)
-	{
-		nbr *= -1;
-		is_neg++;
-		write(1, "-", 1);
-	}
-	return (ft_putnbr(nbr) + is_neg);
+void ft_putnbr(int nb)
+{
+    if (nb == -2147483648)
+        write(1, "-2147483648", 11);
+    if (nb < 0 && nb != -2147483648)
+    {
+        ft_putchar('-');
+        nb *= -1;
+    }
+    if (nb >= 10)
+    {
+        ft_putnbr(nb / 10);
+        ft_putnbr(nb % 10);
+    }
+    if (nb >= 0 && nb < 10)
+        ft_putchar(nb + '0');
 }

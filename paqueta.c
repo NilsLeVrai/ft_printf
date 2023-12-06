@@ -2,7 +2,7 @@
 
 int main ()
 {
-	int i = 'w';
+	int i = 78;
 
 	printf ("%d\n", ft_printf("  %c\n", i));
 	printf("%d\n", printf("  %c\n", i));
