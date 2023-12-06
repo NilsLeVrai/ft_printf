@@ -2,8 +2,8 @@
 
 int main ()
 {
-	int i = 121212;
+	int i = 'w';
 
-	printf ("%i\n", ft_printf("Moi: %d\n", i));
-	printf("%i\n", printf("Vraie: %d\n", i));
+	printf ("%d\n", ft_printf("  %c\n", i));
+	printf("%d\n", printf("  %c\n", i));
 }
