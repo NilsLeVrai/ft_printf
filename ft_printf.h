@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                        :+:      :+:    :+:   */
+/*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/16 12:10:05 by niabraha          #+#    #+#             */
-/*   Updated: 2023/11/16 12:13:42 by niabraha         ###   ########.fr       */
+/*   Created: 2023/12/06 11:49:23 by niabraha          #+#    #+#             */
+/*   Updated: 2023/12/06 12:35:48 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
+#ifndef FT_PRINTF_H
+# define FT_PRINTF_H
 
 # include <stdarg.h>
 # include <unistd.h>
 # include <stdio.h>
 # include "./libft/libft.h"
 
-int ft_printf(const char* format, ...);
-int args_percent(va_list args);
-int args_char(va_list args);
-int args_digit(va_list args);
-int args_lowerhexa(va_list args);
-int args_pointer(va_list args);
-int args_string(va_list args);
-int args_unsigned(va_list args);
-int args_upperhexa(va_list args);
+int	ft_printf(const char *format, ...);
+int	args_char(va_list args);
+int	args_digit(va_list args);
+int	args_lowerhexa(va_list args);
+int	args_percent(void);
+int	args_pointer(va_list args);
+int	args_string(va_list args);
+int	args_unsigned(va_list args);
+int	args_upperhexa(va_list args);
 
 #endif

@@ -6,20 +6,18 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:33:36 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/05 15:56:48 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/06 12:37:10 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	check_args(const char *format, va_list args)
 {
 	int	i;
 
 	i = 0;
-	if (*format == '%')
-		return (args_percent());
-	else if (*format == 'c')
+	if (*format == 'c')
 		return (args_char(args));
 	else if (*format == 'd' || *format == 'i')
 		i += args_digit(args);
@@ -31,12 +29,14 @@ int	check_args(const char *format, va_list args)
 		return (args_unsigned(args));
 	else if (*format == 'x')
 		return (args_lowerhexa(args));
-	else  (*format == 'X')
+	else if (*format == 'X')
 		return (args_upperhexa(args));
+	else if (*format == '%')
+		return (args_percent());
 	return (-1);
 }
 
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
 	va_list			args;
 	unsigned int	num_args;

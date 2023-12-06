@@ -6,22 +6,22 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:48:53 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/05 16:51:34 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/06 12:37:03 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-int args_string(va_list args)
+int	args_string(va_list args)
 {
-	char 	*str;
+	char	*str;
 	int		len;
 
-	str = va_arg(args, char*);
+	str = va_arg(args, char *);
 	len = 0;
 	if (!str)
 		return (write(1, "(null)", 1));
-	while(str[len])
+	while (str[len])
 		write(1, &str[len++], 1);
 	return (len);
 }

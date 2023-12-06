@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   args_lowerhexa.c                                        :+:      :+:    :+:   */
+/*   args_lowerhexa.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niabraha <niabraha@students.42.fr>         +#+  +:+       +#+        */
+/*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/06 00:27:49 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/06 00:27:49 by niabraha         ###   ########.fr       */
+/*   Created: 2023/12/06 11:52:51 by niabraha          #+#    #+#             */
+/*   Updated: 2023/12/06 12:36:57 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	args_lowerhexa(va_list args)
 {
-	unsigned int nbr;
+	unsigned int	nbr;
 
-	nbr = va_list(args, unsigned int);
+	nbr = va_arg(args, unsigned int);
 	return (ft_putnbr_base(nbr, "0123456789abcdef"));
 }

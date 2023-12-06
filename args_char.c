@@ -6,16 +6,16 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 17:12:56 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/05 16:48:32 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/06 12:36:51 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	args_char(va_list args)
 {
 	char	c;
 
-	c = va_args(args, int);
-	return (ft_putchar_fd(c, 1));
+	c = va_arg(args, int);
+	return (write(1, &c, 1));
 }

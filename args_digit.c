@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   args_digit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niabraha <niabraha@students.42.fr>         +#+  +:+       +#+        */
+/*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 00:21:55 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/06 00:21:55 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/06 12:36:54 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-int args_digit(va_list args)
+int	args_digit(va_list args)
 {
 	long	nbr;
 	int		is_neg;

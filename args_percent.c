@@ -3,17 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   args_percent.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: niabraha <niabraha@students.42.fr>         +#+  +:+       +#+        */
+/*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 23:21:28 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/05 23:21:28 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/06 12:36:59 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	args_percent(void)
 {
-	ft_putchar_fd('%', 1);
+	char	c;
+
+	c = '%';
+	write(1, &c, 1);
 	return (1);
 }

@@ -6,7 +6,7 @@
 #    By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/17 10:47:50 by niabraha          #+#    #+#              #
-#    Updated: 2023/12/05 16:45:05 by niabraha         ###   ########.fr        #
+#    Updated: 2023/12/06 12:14:30 by niabraha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ FILES = args_char.c \
 		args_string.c \
 		args_unsigned.c \
 		args_upperhexa.c \
-		ft_printf.c \
+		ft_printf.c 
 
 NAME = libftprintf.a
 LIBFT_MAKEFILE = $(MAKE) -C ./libft
