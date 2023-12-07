@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 11:49:23 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/06 12:35:48 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/07 16:22:11 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdarg.h>
 # include <unistd.h>
-# include <stdio.h>
 # include "./libft/libft.h"
 
 int	ft_printf(const char *format, ...);
