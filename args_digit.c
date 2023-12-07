@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/06 00:21:55 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/06 17:46:45 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/07 16:17:22 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	args_digit(va_list args)
 {
 	long	nbr;
-	int	is_neg;
+	int		is_neg;
 
 	nbr = va_arg(args, int);
 	is_neg = 0;
@@ -25,5 +25,5 @@ int	args_digit(va_list args)
 		is_neg++;
 		write(1, "-", 1);
 	}
-	return (ft_putnbr(nbr, "0123456789") + is_neg);
+	return (ft_putnbr_base(nbr, "0123456789") + is_neg);
 }

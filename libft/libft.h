@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 10:54:04 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/06 17:52:04 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/07 16:18:44 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 //void
 
-int	ft_putchar_fd(char c, int fd);
+int		ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
@@ -112,7 +112,6 @@ typedef struct s_list
 
 int		ft_lstsize(t_list *lst);
 int		ft_putnbr_base(unsigned long nbr, const char *base);
-int		ft_putnbr(int nbr, const char *base);
 
 // t_list
 

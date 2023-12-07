@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:33:36 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/06 12:37:10 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/07 16:08:56 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,10 @@
 
 int	check_args(const char *format, va_list args)
 {
-	int	i;
-
-	i = 0;
 	if (*format == 'c')
 		return (args_char(args));
 	else if (*format == 'd' || *format == 'i')
-		i += args_digit(args);
+		return (args_digit(args));
 	else if (*format == 'p')
 		return (args_pointer(args));
 	else if (*format == 's')
