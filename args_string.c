@@ -22,6 +22,10 @@ int	args_string(va_list args)
 	if (!str)
 		return (write(1, "(null)", 6));
 	while (str[len])
+	{
+		if (ft_putchar_fd(*str, 1) == -1)
+			return (-1);
 		write(1, &str[len++], 1);
+	}
 	return (len);
 }
