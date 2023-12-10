@@ -12,6 +12,13 @@
 
 #include "libft.h"
 
+static	int ft_protect_putchar(char c, int fd)
+{
+	if (ft_putchar_fd(c, fd) == -1)
+		return (-1);
+	return (1);
+}
+
 int	ft_putnbr_base(unsigned long nbr, const char *base)
 {
 	unsigned long	base_len;
@@ -21,6 +28,6 @@ int	ft_putnbr_base(unsigned long nbr, const char *base)
 	base_len = ft_strlen(base);
 	if (nbr >= base_len)
 		nb_len += ft_putnbr_base(nbr / base_len, base);
-	nb_len += ft_putchar_fd(base[nbr % base_len], 1);
+	nb_len += ft_protect_putchar(base[nbr % base_len], 1);
 	return (nb_len);
 }
