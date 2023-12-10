@@ -23,6 +23,8 @@ int	args_digit(va_list args)
 	{
 		nbr *= -1;
 		is_neg++;
+		if (write(1, &c, 1) == -1)
+			return (-1);
 		write(1, "-", 1);
 	}
 	return (ft_putnbr_base(nbr, "0123456789") + is_neg);
