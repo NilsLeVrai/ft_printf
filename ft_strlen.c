@@ -1,31 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 17:07:12 by niabraha          #+#    #+#             */
-/*   Updated: 2023/11/09 17:28:17 by niabraha         ###   ########.fr       */
+/*   Created: 2023/10/17 14:09:16 by niabraha          #+#    #+#             */
+/*   Updated: 2023/12/11 15:05:44 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+size_t	ft_strlen(const char *s)
 {
-	unsigned int		i;
-	unsigned char		char_find;
-	size_t				len;
+	int	i;
 
-	char_find = (unsigned char) c;
 	i = 0;
-	len = (size_t) ft_strlen(s);
-	while (i <= (unsigned int) len)
-	{
-		if (s[i] == char_find)
-			return ((char *) &s[i]);
+	while (s[i])
 		i++;
-	}
-	return (NULL);
+	return (i);
 }

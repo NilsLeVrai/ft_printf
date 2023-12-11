@@ -1,37 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/19 10:34:07 by niabraha          #+#    #+#             */
-/*   Updated: 2023/11/09 17:28:22 by niabraha         ###   ########.fr       */
+/*   Created: 2023/12/05 23:36:47 by niabraha          #+#    #+#             */
+/*   Updated: 2023/12/11 14:51:59 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t n)
+int	ft_putnbr_base(unsigned long nbr, const char *base)
 {
-	size_t	i;
-	size_t	len_dest;
-	size_t	len_src;
+	unsigned long	base_len;
+	int				nb_len;
 
-	i = 0;
-	len_dest = ft_strlen(dst);
-	len_src = ft_strlen(src);
-	if (n < len_dest)
-		len_src += n;
-	else
-		len_src += len_dest;
-	while (n > len_dest + 1 && src[i])
-	{
-		dst[len_dest] = src[i];
-		len_dest++;
-		i++;
-	}
-	if (n >= len_dest)
-		dst[len_dest] = '\0';
-	return (len_src);
+	nb_len = 0;
+	base_len = ft_strlen(base);
+	if (nbr >= base_len)
+		nb_len += ft_putnbr_base(nbr / base_len, base);
+	nb_len += ft_putchar_fd_safe(base[nbr % base_len], 1);
+	return (nb_len);
 }

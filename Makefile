@@ -6,50 +6,43 @@
 #    By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/17 10:47:50 by niabraha          #+#    #+#              #
-#    Updated: 2023/12/06 13:02:24 by niabraha         ###   ########.fr        #
+#    Updated: 2023/12/11 14:55:35 by niabraha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FILES = args_char.c \
-		args_digit.c \
-		args_lowerhexa.c \
-		args_percent.c \
-		args_pointer.c \
-		args_string.c \
-		args_unsigned.c \
-		args_upperhexa.c \
-		ft_printf.c 
+FILES_PT1 = args_char.c \
+			args_digit.c \
+			args_lowerhexa.c \
+			args_percent.c \
+			args_pointer.c \
+			args_string.c \
+			args_unsigned.c \
+			args_upperhexa.c \
+			ft_printf.c \
+			ft_putchar_fd_safe.c \
+			ft_putnbr_base.c \
+			ft_strlen.c
 
 NAME = libftprintf.a
-LIBFT_MAKEFILE = $(MAKE) -C ./libft
-LIBFT = ./libft/libft.a
 CFLAGS = -Wall -Werror -Wextra
 CC = gcc
 ARFLAGS = rcs
 
-OBJ = $(FILES:.c=.o)
-
+OBJ = $(FILES_PT1:.c=.o)
 all: $(NAME)
 
-$(LIBFT):
-	$(LIBFT_MAKEFILE)
-
-$(NAME): $(OBJ) | $(LIBFT)
-	cp $(LIBFT) $(NAME)
+$(NAME): $(OBJ)
 	$(AR) $(ARFLAGS) $@ $^
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
-	$(LIBFT_MAKEFILE) clean
+	rm -f *.o
 
-fclean: clean all
-	rm -f $(NAME) $(OBJ)
-	$(LIBFT_MAKEFILE) fclean
+fclean: clean
+	rm -f $(NAME)
 
 re: fclean all
-	$(LIBFT_MAKEFILE) re
 
 .PHONY: all clean fclean re

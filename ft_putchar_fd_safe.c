@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isascii.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd_safe.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/17 13:19:10 by niabraha          #+#    #+#             */
-/*   Updated: 2023/11/09 17:25:34 by niabraha         ###   ########.fr       */
+/*   Created: 2023/12/11 14:35:15 by niabraha          #+#    #+#             */
+/*   Updated: 2023/12/11 15:04:57 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-int	ft_isascii(int c)
+int	ft_putchar_fd_safe(char c, int fd)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	return (0);
+	if (write(fd, &c, 1) == -1)
+		return (-1);
+	return (1);
 }

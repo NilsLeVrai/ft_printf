@@ -6,18 +6,11 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:33:36 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/07 16:08:56 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:24:23 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-static int ft_putchar_fd_safe(char c, int fd)
-{
-    if (write(fd, &c, 1) == -1)
-        return -1;
-    return 1;
-}
 
 int	check_args(const char *format, va_list args)
 {
@@ -40,21 +33,38 @@ int	check_args(const char *format, va_list args)
 	return (-1);
 }
 
+int	ft_parser()
+{
+	
+}
+
 int	ft_printf(const char *format, ...)
 {
-	va_list			args;
-	unsigned int	num_args;
+	va_list	args;
+	int		num_args;
+	int		write_response;
 
 	num_args = 0;
+	write_response = 0;
 	if (!format)
 		return (-1);
 	va_start(args, format);
 	while (*format)
 	{
 		if (*format == '%')
-			num_args += check_args((++format), args);
+		{
+			write_response = check_args((++format), args);
+			if (write_response == -1)
+				return (-1);
+			num_args += write_response;
+		}
 		else
-			num_args += ft_putchar_fd_safe(*format, 1);
+		{
+			write_response = ft_putchar_fd_safe(*format, 1);
+			if (write_response == -1)
+				return (-1);
+			num_args += write_response;
+		}
 		++format;
 	}
 	va_end(args);
