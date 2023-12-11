@@ -6,19 +6,31 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:48:53 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/11 15:19:39 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/11 16:04:38 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+int	ft_error_check(char *str)
+{
+	int	len;
+
+	len = 0;
+	while (str[len])
+	{
+		if (ft_putchar_fd_safe(str[len], 1) == -1)
+			return (-1);
+		len++;
+	}
+	return (len);
+}
+
 int	args_string(va_list args)
 {
 	char	*str;
-	int		len;
 
 	str = va_arg(args, char *);
-	len = 0;
 	if (!str)
 	{
 		if (ft_putchar_fd_safe('(', 1) == -1)
@@ -35,11 +47,5 @@ int	args_string(va_list args)
 			return (-1);
 		return (6);
 	}
-	while (str[len])
-	{
-		if (ft_putchar_fd_safe(str[len], 1) == -1)
-			return (-1);
-		len++;
-	}
-	return (len);
+	return (ft_error_check(str));
 }

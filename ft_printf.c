@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:33:36 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/11 15:24:23 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:52:55 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,22 +33,13 @@ int	check_args(const char *format, va_list args)
 	return (-1);
 }
 
-int	ft_parser()
+int	ft_parser(const char *format, va_list args)
 {
-	
-}
+	int	write_response;
+	int	num_args;
 
-int	ft_printf(const char *format, ...)
-{
-	va_list	args;
-	int		num_args;
-	int		write_response;
-
-	num_args = 0;
 	write_response = 0;
-	if (!format)
-		return (-1);
-	va_start(args, format);
+	num_args = 0;
 	while (*format)
 	{
 		if (*format == '%')
@@ -67,6 +58,19 @@ int	ft_printf(const char *format, ...)
 		}
 		++format;
 	}
+	return (num_args);
+}
+
+int	ft_printf(const char *format, ...)
+{
+	va_list	args;
+	int		num_args;
+
+	num_args = 0;
+	if (!format)
+		return (-1);
+	va_start(args, format);
+	num_args = ft_parser(format, args);
 	va_end(args);
 	return (num_args);
 }
