@@ -12,6 +12,13 @@
 
 #include "ft_printf.h"
 
+static int ft_putchar_fd_safe(char c, int fd)
+{
+    if (write(fd, &c, 1) == -1)
+        return -1;
+    return 1;
+}
+
 int	check_args(const char *format, va_list args)
 {
 	if (*format == 'c')
@@ -47,7 +54,7 @@ int	ft_printf(const char *format, ...)
 		if (*format == '%')
 			num_args += check_args((++format), args);
 		else
-			num_args += write(1, format, 1);
+			num_args += ft_putchar_fd_safe(*format, 1);
 		++format;
 	}
 	va_end(args);
