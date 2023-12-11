@@ -24,5 +24,5 @@ int	args_char(va_list args)
 	char	c;
 
 	c = va_arg(args, int);
-	return (ft_putchar_fd_safe(1, &c, 1));
+	return (ft_putchar_fd_safe(c, 1));
 }
