@@ -14,9 +14,9 @@
 
 static int ft_putchar_fd_safe(char c, int fd)
 {
-    if (write(fd, &c, 1) == -1)
-        return -1;
-    return 1;
+	if (write(fd, &c, 1) == -1)
+		return (-1);
+	return (1);
 }
 
 int	args_pointer(va_list args)
@@ -34,9 +34,12 @@ int	args_pointer(va_list args)
             		return (-1);
         	return (3);
 	}
+	else
+	{
 		if (ft_putchar_fd_safe('0', 1) == -1)
 			return (-1);
         	if (ft_putchar_fd_safe('x', 1) == -1)
         		return (-1);
+	}
 	return (ft_putnbr_base((unsigned long)adr, "0123456789abcdef") + 2);
 }
