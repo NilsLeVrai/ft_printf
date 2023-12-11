@@ -12,13 +12,19 @@
 
 #include "ft_printf.h"
 
+static int ft_putchar_fd_safe(char c, int fd)
+{
+	if (write(fd, &c, 1) == -1)
+		return (-1);
+	return (1);
+}
+
 int	args_percent(void)
 {
 	char	c;
 
 	c = '%';
-	if (write(1, &c, 1) == -1)
+	if (ft_putchar_fd_safe(c, 1) == -1)
 		return (-1);
-	write(1, &c, 1);
-	return (1);
+	return (ft_putchar_fd_safe(c, 1));
 }
