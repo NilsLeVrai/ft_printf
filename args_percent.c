@@ -24,7 +24,5 @@ int	args_percent(void)
 	char	c;
 
 	c = '%';
-	if (ft_putchar_fd_safe(c, 1) == -1)
-		return (-1);
 	return (ft_putchar_fd_safe(c, 1));
 }
