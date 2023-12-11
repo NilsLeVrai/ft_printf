@@ -12,6 +12,13 @@
 
 #include "ft_printf.h"
 
+static int ft_putchar_fd_safe(char c, int fd)
+{
+    if (write(fd, &c, 1) == -1)
+        return -1;
+    return 1;
+}
+
 int	args_string(va_list args)
 {
 	char	*str;
@@ -20,12 +27,26 @@ int	args_string(va_list args)
 	str = va_arg(args, char *);
 	len = 0;
 	if (!str)
-		return (write(1, "(null)", 6));
+	{
+		if (ft_putchar_fd_safe('(', 1) == -1)
+			return (-1);
+        	if (ft_putchar_fd_safe('n', 1) == -1)
+        		return (-1);
+        	if (ft_putchar_fd_safe('u', 1) == -1)
+            		return (-1);
+		if (ft_putchar_fd_safe('l', 1) == -1)
+			return (-1);
+        	if (ft_putchar_fd_safe('l', 1) == -1)
+        		return (-1);
+        	if (ft_putchar_fd_safe(')', 1) == -1)
+            		return (-1);
+        	return (6);
+	}
 	while (str[len])
 	{
-		if (ft_putchar_fd(*str, 1) == -1)
+		if (ft_putchar_fd_safe(str[len], 1) == -1)
 			return (-1);
-		write(1, &str[len++], 1);
+		len++;
 	}
 	return (len);
 }
