@@ -14,9 +14,9 @@
 
 static int ft_putchar_fd_safe(char c, int fd)
 {
-    if (write(fd, &c, 1) == -1)
-        return (-1);
-    return (1);
+	    if (write(fd, &c, 1) == -1)
+		    return (-1);
+	    return (1);
 }
 
 int	args_digit(va_list args)
