@@ -6,13 +6,13 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:33:36 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/12 13:41:50 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/12 14:29:18 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	check_args(const char *format, va_list args)
+static int	check_args(const char *format, va_list args)
 {
 	if (*format == 'c')
 		return (args_char(args));
@@ -33,7 +33,7 @@ int	check_args(const char *format, va_list args)
 	return (-1);
 }
 
-int	ft_parser(const char *format, va_list args)
+static int	ft_parser(const char *format, va_list args)
 {
 	int	write_response;
 	int	num_args;
