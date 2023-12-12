@@ -6,13 +6,13 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/05 16:48:53 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/11 16:51:36 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/12 13:44:12 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_error_check(char *str)
+int	ft_putstr_safe(char *str)
 {
 	int	len;
 
@@ -47,5 +47,5 @@ int	args_string(va_list args)
 			return (-1);
 		return (6);
 	}
-	return (ft_error_check(str));
+	return (ft_putstr_safe(str));
 }

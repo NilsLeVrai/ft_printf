@@ -6,7 +6,7 @@
 /*   By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 14:33:36 by niabraha          #+#    #+#             */
-/*   Updated: 2023/12/11 15:52:55 by niabraha         ###   ########.fr       */
+/*   Updated: 2023/12/12 13:41:50 by niabraha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,13 +64,13 @@ int	ft_parser(const char *format, va_list args)
 int	ft_printf(const char *format, ...)
 {
 	va_list	args;
-	int		num_args;
+	int		len;
 
-	num_args = 0;
+	len = 0;
 	if (!format)
 		return (-1);
 	va_start(args, format);
-	num_args = ft_parser(format, args);
+	len = ft_parser(format, args);
 	va_end(args);
-	return (num_args);
+	return (len);
 }

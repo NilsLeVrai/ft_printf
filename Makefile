@@ -6,7 +6,7 @@
 #    By: niabraha <niabraha@42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/17 10:47:50 by niabraha          #+#    #+#              #
-#    Updated: 2023/12/11 14:55:35 by niabraha         ###   ########.fr        #
+#    Updated: 2023/12/12 13:53:59 by niabraha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ FILES_PT1 = args_char.c \
 
 NAME = libftprintf.a
 CFLAGS = -Wall -Werror -Wextra
-CC = gcc
+CC = cc
 ARFLAGS = rcs
 
 OBJ = $(FILES_PT1:.c=.o)
